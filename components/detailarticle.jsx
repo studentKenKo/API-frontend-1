@@ -27,6 +27,7 @@ function DetailArticle(props) {
           <h1>{article.title}</h1>
           <p>{article.alltext}</p>            
           <Button type="primary" icon={<RollbackOutlined />} onClick={()=>navigate(-1)} />
+          <p>Press to go Home</p>
         </>
       );
   }

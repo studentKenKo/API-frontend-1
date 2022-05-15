@@ -1,6 +1,8 @@
 import React from "react";
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button} from 'antd';
 import http from '../common/http-common'
+
+
 
 function onFinish(values) {
   //console.log("Success", values)
@@ -48,11 +50,10 @@ const tailFormItemLayout = {
   wrapperCol: { xs: { span: 24, offset: 0 }, sm: { span: 16, offset: 6 } },
 };
 
-
 function RegistrationForm() {  
   return (
-    <Form name="register" {...formItemLayout} scrollToFirstError onFinish={onFinish}>
-        
+
+    <Form name="register" {...formItemLayout} scrollToFirstError onFinish={onFinish}> 
         <Form.Item name="email" label="E-mail" rules={emailRules}>
             <Input />
         </Form.Item>
@@ -69,11 +70,19 @@ function RegistrationForm() {
             <Input />
         </Form.Item>
 
+      <Form.Item name="Passcode" label="Passcode for Staff">
+            <Input placeholder="Staff Only"/>
+        </Form.Item>
+
         <Form.Item {...tailFormItemLayout}>
             <Button type="primary" htmlType="submit">
                 Register
             </Button>
+          <Button type="reset" htmlType="reset">
+                Reset
+            </Button>
         </Form.Item>
+
       </Form>
 
   );    
